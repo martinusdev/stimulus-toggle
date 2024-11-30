@@ -12,7 +12,7 @@ A lightweight Stimulus controller to dynamically toggle the visibility of elemen
 Install via npm:
 
 ```bash
-npm install toggle-controller
+npm add stimulus-toggle-kit
 ```
 
 ## Usage
