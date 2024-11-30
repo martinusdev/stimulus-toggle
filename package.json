@@ -1,0 +1,26 @@
+{
+  "name": "stimulus-toggle",
+  "version": "1.0.0",
+  "description": "A Stimulus controller for dynamic element toggling based on user input. Supports dropdowns, checkboxes, and radio buttons to show or hide elements based on configured data attributes.",
+  "main": "src/toggle_controller.js",
+  "private": false,
+  "keywords": [
+    "stimulus",
+    "hotwired",
+    "turbo",
+    "toggle"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/martinusdev/stimulus-toggle.git"
+  },
+  "bugs": {
+    "url": "https://github.com/martinusdev/stimulus-toggle/issues"
+  },
+  "homepage": "https://github.com/martinusdev/stimulus-toggle",
+  "author": "Michal Ferák <michal@ferak.dev>",
+  "license": "MIT",
+  "peerDependencies": {
+    "@hotwired/stimulus": "^3.2.2"
+  }
+}
