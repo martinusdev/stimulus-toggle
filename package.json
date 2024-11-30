@@ -1,5 +1,5 @@
 {
-  "name": "stimulus-toggle",
+  "name": "stimulus-toggle-kit",
   "version": "1.0.0",
   "description": "A Stimulus controller for dynamic element toggling based on user input. Supports dropdowns, checkboxes, and radio buttons to show or hide elements based on configured data attributes.",
   "main": "src/toggle_controller.js",
