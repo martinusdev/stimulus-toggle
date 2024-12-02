@@ -6,6 +6,7 @@ A lightweight Stimulus controller to dynamically toggle the visibility of elemen
 - Supports dropdowns, checkboxes, and radio buttons.
 - Easily configurable with `data-*` attributes.
 - Handles toggling for grouped or individual elements.
+- Supports a11y by toggling `aria-hidden` attribute, setting `aria-controls` on the toggle controls, as well as `aria-expanded` when necessary.
 
 ## Installation
 
@@ -35,6 +36,7 @@ Basic example:
 <div data-controller="toggle">
     <!-- select controller target -->
     <select data-toggle-target="select" data-action="toggle#changed">
+        <option>Select an option</option>
         <option value="option1">Option 1</option>
         <option value="option2">Option 2</option>
     </select>
@@ -43,9 +45,15 @@ Basic example:
     <input type="checkbox" data-toggle-target="checkbox" data-action="toggle#changed" value="option3">
 
     <!-- radio controller target -->
-    <div data-toggle-target="radio" data-action="toggle#changed">
-        <input type="radio" name="option" value="option4"> Option 4
-        <input type="radio" name="option" value="option5"> Option 5
+    <div data-toggle-target="radio">
+        <label>
+          <input type="radio" data-action="toggle#changed" name="option" value="option4">
+          Option 4
+        </label>
+        <label>
+          <input type="radio" data-action="toggle#changed" name="option" value="option5">
+          Option 5
+        </label>
     </div>
 
     <!-- element controller targets -->
@@ -94,9 +102,14 @@ More advanced example, using multiple toggle sets:
 
 ## Data Attribute Reference
 
-* `data-toggle-set`
-  * specifies the toggle set(s) the element belongs to. Comma-separated for multiple sets.
+* `data-toggle-set` (optional)
+  * Specifies the toggle set(s) the element belongs to. Comma-separated for multiple sets.
 * `data-values`
   * Defines the value(s) that should make the element visible. Comma-separated for multiple values.
 * `data-toggle-target`
-  * Indicates the target type (e.g., element, checkbox, radio, select).
+  * Indicates the target type
+  * `element` - this will make the element a toggle target
+  * `select` - this will make the select element a toggle control
+  * `checkbox` - this will make the checkbox element a toggle control
+  * `radio` - this will make the radio elements within the parent element toggle controls
+    * Please note, all of the radio buttons of the same name should be wrapped in a containing div with the `data-toggle-target="radio"` attribute. See example above.
